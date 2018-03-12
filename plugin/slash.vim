@@ -17,6 +17,8 @@ for i in range(start - 1, end):
 
 if cnt < (end - start + 1) / 2:
     maxLen = max(map(len, buffer[start-1:end]) or [0]) + 1
+    if maxLen < 78:
+        maxLen = 78
 
     for i in range(start - 1, end):
         buffer[i] += ' ' * (maxLen - len(buffer[i])) + '\\'
