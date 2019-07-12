@@ -1,5 +1,5 @@
 function! ToggleSlash()
-python << EOF
+py3 << EOF
 import vim
 
 buffer = vim.current.buffer
