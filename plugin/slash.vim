@@ -9,18 +9,18 @@ end, _ = buffer.mark('>')
 
 cnt = 0
 for i in range(start - 1, end):
-    cnt += buffer[i].rstrip().endswith('\\')
+  cnt += buffer[i].rstrip().endswith('\\')
 
 for i in range(start - 1, end):
-    buffer[i] = buffer[i].rstrip('\\ ')
+  buffer[i] = buffer[i].rstrip('\\ ')
 
 if cnt < (end - start + 1) / 2:
-    maxLen = max(map(len, buffer[start-1:end]) or [0]) + 1
-    if maxLen < 78:
-        maxLen = 78
+  maxLen = max(map(len, buffer[start-1:end]) or [0]) + 1
+  if maxLen < 79:
+    maxLen = 79
 
-    for i in range(start - 1, end):
-        buffer[i] += ' ' * (maxLen - len(buffer[i])) + '\\'
+  for i in range(start - 1, end):
+    buffer[i] += ' ' * (maxLen - len(buffer[i])) + '\\'
 
 EOF
 endfunction
